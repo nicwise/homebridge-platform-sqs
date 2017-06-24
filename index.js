@@ -108,8 +108,16 @@ SQSAccessory.prototype = {
     //toggle the internal state of the button
     this.buttonIsOn = !this.buttonIsOn;
     this.log(`${this.name}: SQS Button state change. New state is ${this.buttonIsOn}`);
-    this.service.setCharacteristic(Characteristic.On, this.buttonIsOn);
+    //this.service.setCharacteristic(Characteristic.On, this.buttonIsOn);
+this.log('alt');
+    this.service.getCharacteristic(Characteristic.On).setValue(this.buttonIsOn);
   },
+
+  identify: function(callback) {
+    this.log("["+this.name+"] Identify requested!");
+    callback(); // success
+  },
+
   getServices: function() {
     //get the services this accessory supports
     //this is were we setup the button, but if it was, eg, a fan, you'd make a fan here.
