@@ -1,0 +1,24 @@
+{
+  "bridge": {
+    "name": "Homebridge",
+    "username": "AA:BB:3D:E3:CE:30",
+    "port": 51826,
+    "pin": "051-55-155"
+  },
+  "description": "Sample Config",
+  "platforms": [
+    {
+      "platform": "SQS",
+      "name": "SQS",
+      "accessories": [
+        {
+          "name": "Dash Button",
+          "queueurl": "https://sqs.us-west-2.amazonaws.com/accountid/sqsqueuename",
+          "accesskey": "AWSACCESSKEY",
+          "secret": "AWSACCESSSECRET",
+          "region": "us-west-2"
+        }
+      ]
+    }
+  ]
+}
