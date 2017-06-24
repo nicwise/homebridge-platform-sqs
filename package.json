@@ -1,6 +1,6 @@
 {
   "name": "homebridge-platform-sqs",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Amazon AWS SQS and Lambda plugin for homebridge: https://github.com/nfarina/homebridge",
   "license": "ISC",
   "keywords": [
