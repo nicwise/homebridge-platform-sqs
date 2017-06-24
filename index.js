@@ -105,7 +105,6 @@ SQSAccessory.prototype = {
   },
 
   toggleButton: function() {
-    this.log("toggle");
     //toggle the internal state of the button
     this.buttonIsOn = !this.buttonIsOn;
     this.log(`${this.name}: SQS Button state change. New state is ${this.buttonIsOn}`);
@@ -140,7 +139,6 @@ SQSAccessory.prototype = {
   },
 
   getSPState: function(callback) {
-    this.log("getState");
     //homekit calling into us to get the state
     this.log(`${this.name}: Get State: ${this.buttonIsOn}`);
     callback(null, this.buttonIsOn);
