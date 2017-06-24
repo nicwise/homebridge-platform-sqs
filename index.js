@@ -108,8 +108,6 @@ SQSAccessory.prototype = {
     //toggle the internal state of the button
     this.buttonIsOn = !this.buttonIsOn;
     this.log(`${this.name}: SQS Button state change. New state is ${this.buttonIsOn}`);
-    //this.service.setCharacteristic(Characteristic.On, this.buttonIsOn);
-this.log('alt');
     this.service.getCharacteristic(Characteristic.On).setValue(this.buttonIsOn);
   },
 
