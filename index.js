@@ -51,7 +51,7 @@ function SQSAccessory(log, accessory) {
   this.log = log;
   this.accessory = accessory;
   this.name = this.accessory.name;
-  this.buttonIsOn = 0;
+  this.buttonIsOn = false;
   this.startListener();
 }
 
@@ -111,7 +111,7 @@ SQSAccessory.prototype = {
 
   toggleButton: function() {
     //toggle the internal state of the button
-    this.buttonIsOn = this.buttonIsOn == 0 ? 1 : 0;
+    this.buttonIsOn = !this.buttonIsOn;
     this.log(`${this.name}: SQS Button state change. New state is ${this.buttonIsOn}`);
     this.service.getCharacteristic(Characteristic.On).setValue(this.buttonIsOn);
   },
@@ -156,13 +156,13 @@ SQSAccessory.prototype = {
   },
 
   setSPState: function(state, callback) {
-    this.buttonIsOn = state;
+
     //homekit calling into us to set the state. state is 1 or 0
-    //if (state) {
-    //  this.buttonIsOn = true;
-    //} else {
-    //  this.buttonIsOn = false;
-    //}
+    if (state) {
+      this.buttonIsOn = true;
+    } else {
+      this.buttonIsOn = false;
+    }
     this.log(`${this.name}: Set State to ${this.buttonIsOn}`);
     callback(null, this.buttonIsOn);
 
