@@ -1,5 +1,5 @@
 # homebridge-platform-sqs
-Hombridge platform for Amazon SQS, esp Dash Buttons
+Hombridge platform for Amazon SQS, esp Dash Buttons. [Full blogpost about it](https://fastchicken.co.nz/2017/06/25/more-homebridge-aws-iot-dash-button-sqs-broadlink-rm3-mini/)
 
 # My setup
 
