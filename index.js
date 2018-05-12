@@ -70,7 +70,7 @@ SQSAccessory.prototype = {
       // mostly cos sqsworker is a bit noisy
       log: {
         info: function(a, b) {
-          self.log(a + " " + b);
+          //self.log(a + " " + b);
         },
         error: function(a, b) {
           self.log("err:" + a + " " + b);
