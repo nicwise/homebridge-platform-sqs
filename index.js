@@ -81,9 +81,9 @@ SQSAccessory.prototype = {
     //setup the queue.
     this.queue = new SQSWorker(options, function(event, done) {
       self.log("message...");
-      if (self.accessory.verbose) {
+      //if (self.accessory.verbose) {
         self.log(event);
-      }
+      //}
 
 
       self.toggleButton();
